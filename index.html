@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreakIt! — Interactive Microbiology Exploration & Virtual Laboratory</title>
+  <meta name="description" content="Explore microbial habitats, collect virtual environmental samples, practise 4-quadrant agar-plate streaking, observe colony morphology, and reason from evidence in an interactive digital lab.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-navbar">
+    <div class="nav-container">
+      <a href="#home" class="site-logo" aria-label="StreakIt Home">
+        <div class="logo-dish-icon">
+          <div class="logo-inner-streak"></div>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-brand">Streak<span class="logo-accent">It!</span></span>
+          <span class="logo-tagline">Explore • Sample • Streak • Discover</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links-cluster" id="nav-links-cluster">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#lab" class="nav-link">Virtual Lab</a>
+        <a href="#missions" class="nav-link">Missions Hub</a>
+        <a href="#notebook" class="nav-link">Lab Notebook</a>
+        <a href="#concepts" class="nav-link">Concepts Library</a>
+        <a href="#about" class="nav-link">About Creator</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="nav-controls-cluster">
+        <button class="nav-icon-btn" id="nav-sound-toggle" title="Toggle laboratory audio">🔊 Sound On</button>
+        <button class="nav-icon-btn" id="nav-settings-btn" title="Open settings">⚙️ Settings</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global Main Content Wrapper -->
+  <main class="main-content-area">
+
+    <!-- Sticky Guide Banner: Instructor Arshi -->
+    <div class="instructor-wrapper" id="instructor-container" style="max-width: 1240px; margin: 1rem auto 0; padding: 0 1.25rem;"></div>
+
+    <!-- ================= VIEW 1: HOME ================= -->
+    <section class="view-section active-view" id="view-home">
+      <!-- Hero Section -->
+      <div class="hero-wrapper">
+        <div class="hero-glow-back"></div>
+        <div class="hero-grid">
+          <div class="hero-text-content">
+            <span class="hero-badge-pill">Virtual Microbiology Practicum</span>
+            <h1 class="hero-title">Every habitat holds a story. <span class="hero-highlight">Investigate the evidence.</span></h1>
+            <p class="hero-subtext">
+              Explore diverse microbial environments, collect virtual samples, master aseptic 4-quadrant dilution streaking, observe colony morphology under 10× magnification, and reason with evidence in an interactive virtual laboratory.
+            </p>
+            <div class="hero-cta-cluster">
+              <button class="btn-primary btn-large" id="hero-start-btn">Start Investigation ➔</button>
+              <button class="btn-secondary btn-large" id="hero-explore-btn">Browse Missions 🧭</button>
+            </div>
+          </div>
+
+          <div class="hero-visual-card">
+            <!-- Stylized Petri Dish & Streak Plate Illustration -->
+            <svg class="hero-plate-preview-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="90" fill="#0F172A" stroke="#334155" stroke-width="4"/>
+              <circle cx="100" cy="100" r="82" fill="radial-gradient(circle, #FEF3C7, #F59E0B)"/>
+              <!-- Quadrant lines -->
+              <line x1="100" y1="20" x2="100" y2="180" stroke="#CBD5E1" stroke-dasharray="3,3" opacity="0.6"/>
+              <line x1="20" y1="100" x2="180" y2="100" stroke="#CBD5E1" stroke-dasharray="3,3" opacity="0.6"/>
+              <!-- Dilution Streaks -->
+              <path d="M110 35 Q150 50 160 90" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.9"/>
+              <path d="M150 110 Q145 150 110 160" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.75"/>
+              <path d="M90 155 Q50 145 40 110" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.6"/>
+              <!-- Isolated single colonies in Q4 -->
+              <circle cx="55" cy="70" r="4.5" fill="#FFFFFF" stroke="#0891B2" stroke-width="1.5"/>
+              <circle cx="70" cy="50" r="5" fill="#FFFFFF" stroke="#0891B2" stroke-width="1.5"/>
+              <circle cx="85" cy="65" r="4" fill="#FFFFFF" stroke="#0891B2" stroke-width="1.5"/>
+            </svg>
+            <p class="hero-visual-caption">Standard 4-Quadrant Dilution Streaking Simulation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educational Disclaimer -->
+      <div class="educational-disclaimer">
+        <span class="disclaimer-icon">⚠️</span>
+        <div class="disclaimer-text">
+          <strong>Educational Simulation Notice:</strong> StreakIt! is an interactive educational simulation designed to complement undergraduate curriculum studies. Colony morphology informs preliminary hypotheses, but definitive species identification requires confirmatory biochemical, molecular, or spectroscopic validation.
+        </div>
+      </div>
+
+      <!-- Core Features Grid -->
+      <section class="features-section">
+        <div class="section-lead">
+          <h2>The Scientific Investigation Loop</h2>
+          <p>Observe first. Record evidence. Form a hypothesis. Understand uncertainty.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box">🗺️</div>
+            <h3>Explore Habitats</h3>
+            <p>Sample real-world microbial niches from soil rhizosphere and aquatic biofilms to industrial dairy fermenters.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">🧫</div>
+            <h3>Practise in the Lab</h3>
+            <p>Perform 60fps freehand dilution streaking on agar with flame loop sterilization, quadrant guides, and undo controls.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">🔬</div>
+            <h3>Inspect Morphology</h3>
+            <p>Observe colonial form, margin, elevation, pigmentation, and opacity with a 10× magnified digital optical viewer.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">📓</div>
+            <h3>Build Your Notebook</h3>
+            <p>Automatically maintain structured digital laboratory records, edit reflections, and export printable reports.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Creator Introduction Banner on Home -->
+      <section class="creator-section-card">
+        <div class="creator-grid">
+          <div class="creator-photo-wrapper">
+            <img src="assets/arshi_photo.png" alt="Arshi inspecting a colony counter in microbiology laboratory" class="creator-real-photo">
+            <span class="creator-photo-badge">Project Creator & Lead</span>
+          </div>
+
+          <div class="creator-details">
+            <span class="habitat-badge">Student Creator Profile</span>
+            <h2>Created by Arshi</h2>
+            <p class="creator-role">Undergraduate Biotechnology Student & Educational Designer</p>
+            <p class="creator-bio">
+              "Hi, I'm Arshi, an undergraduate biotechnology student passionate about making microbiology practicals and scientific observation more engaging and intuitive. I created StreakIt! to bridge the gap between classroom theory and hands-on laboratory technique—teaching students how to observe carefully, reason from evidence, and understand the limits of what a colony appearance alone can prove."
+            </p>
+            <div class="creator-contact-bar">
+              <a href="mailto:arshidhingra2006@gmail.com" class="contact-pill contact-email">
+                ✉️ Email Arshi (arshidhingra2006@gmail.com)
+              </a>
+              <a href="tel:9466454005" class="contact-pill contact-phone">
+                📞 Call: 9466454005
+              </a>
+              <a href="#about" class="btn-secondary">Read Full Story ➔</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ================= VIEW 2: VIRTUAL LABORATORY ================= -->
+    <section class="view-section" id="view-lab">
+      <!-- Active Investigation Status Banner -->
+      <div id="active-lab-mission-meta"></div>
+
+      <!-- STAGE 1: Habitat Map & Sampling -->
+      <div class="lab-stage-panel" id="lab-stage-habitat">
+        <div id="habitat-mount-point"></div>
+      </div>
+
+      <!-- STAGE 2: Media Preparation -->
+      <div class="lab-stage-panel" id="lab-stage-media" style="display: none;">
+        <div class="media-options-container">
+          <div class="section-lead" style="text-align: left; margin-bottom: 1.5rem;">
+            <span class="habitat-badge">Phase 2: Culture Formulation</span>
+            <h2>Select Inoculation Medium</h2>
+            <p>Select the agar medium best suited to investigate your collected specimen.</p>
+          </div>
+          <div class="media-options-grid" id="media-options-list"></div>
+        </div>
+      </div>
+
+      <!-- STAGE 3: Streaking Canvas & Inoculation Loop -->
+      <div class="lab-stage-panel" id="lab-stage-streaking" style="display: none;">
+        <div class="streaking-workspace-card">
+          <div class="canvas-viewport-box">
+            <canvas id="streak-canvas"></canvas>
+          </div>
+
+          <div class="streaking-controls-panel">
+            <div class="flame-loop-action">
+              <span class="control-group-title">Aseptic Sterilization</span>
+              <button class="btn-flame-loop" id="btn-streak-flame">🔥 Flame Inoculation Loop</button>
+              <p class="flame-hint">Flame loop between quadrants to physically dilute cell density.</p>
+            </div>
+
+            <div class="canvas-controls-group">
+              <span class="control-group-title">Plate Tools</span>
+              <div class="canvas-buttons-cluster">
+                <button class="btn-secondary" id="btn-streak-undo">↩️ Undo Stroke</button>
+                <button class="btn-secondary" id="btn-streak-clear">🗑️ Clear Plate</button>
+                <button class="btn-secondary" id="btn-streak-guides">Guides: ON</button>
+                <button class="btn-secondary" id="btn-streak-auto" title="Generate standardized pattern for accessibility">♿ Auto-Pattern</button>
+              </div>
+            </div>
+
+            <div class="finish-streaking-box" style="margin-top: auto;">
+              <button class="btn-primary btn-large" id="btn-streak-finish" style="width: 100%;">
+                Transfer Plate to Incubator ➔
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 4: Simulated Incubation Chamber Mount -->
+      <div id="incubator-mount-point"></div>
+
+      <!-- STAGE 5: Colony Morphology Viewer -->
+      <div class="lab-stage-panel" id="lab-stage-colony" style="display: none;">
+        <div id="incubated-plate-mount"></div>
+        <div id="morphology-modal-mount"></div>
+      </div>
+
+      <!-- STAGE 6: Evidence Board -->
+      <div class="lab-stage-panel" id="lab-stage-evidence" style="display: none;">
+        <div id="evidence-board-mount"></div>
+      </div>
+    </section>
+
+    <!-- ================= VIEW 3: MISSIONS HUB ================= -->
+    <section class="view-section" id="view-missions">
+      <div class="section-lead" style="text-align: left;">
+        <span class="hero-badge-pill">Syllabus Curriculum</span>
+        <h2>Microbiology Investigation Missions</h2>
+        <p>Complete increasingly challenging investigations aligned with all 6 units of the undergraduate microbiology syllabus.</p>
+      </div>
+
+      <div class="missions-grid" id="missions-grid-container"></div>
+    </section>
+
+    <!-- ================= VIEW 4: LAB NOTEBOOK ================= -->
+    <section class="view-section" id="view-notebook">
+      <div id="notebook-content-container"></div>
+    </section>
+
+    <!-- ================= VIEW 5: CONCEPT LIBRARY ================= -->
+    <section class="view-section" id="view-concepts">
+      <div class="concepts-page-header">
+        <span class="hero-badge-pill">Scientific Reference</span>
+        <h2>Microbiology Concept Library</h2>
+        <p>Explore fundamental principles across the six core units of the undergraduate microbiology curriculum.</p>
+        <div class="concept-search-bar">
+          <input type="search" id="concept-search-input" placeholder="🔍 Search concepts, terms (e.g. ED pathway, MacConkey, transformation)...">
+        </div>
+      </div>
+
+      <div id="concepts-units-list"></div>
+    </section>
+
+    <!-- ================= VIEW 6: ABOUT / CREATOR ================= -->
+    <section class="view-section" id="view-about">
+      <div class="creator-section-card" style="margin-top: 1rem;">
+        <div class="creator-grid">
+          <div class="creator-photo-wrapper">
+            <img src="assets/arshi_photo.png" alt="Arshi inspecting a colony counter in microbiology laboratory" class="creator-real-photo">
+            <span class="creator-photo-badge">Authentic Lab Photo</span>
+          </div>
+
+          <div class="creator-details">
+            <span class="habitat-badge">Creator & Educational Architect</span>
+            <h2>Arshi</h2>
+            <p class="creator-role">Undergraduate Biotechnology Student & Educational Web Creator</p>
+            
+            <p class="creator-bio">
+              "Hi, I'm Arshi, an undergraduate biotechnology student interested in making scientific learning more interactive and intuitive. I created <strong>StreakIt!</strong> to bring together practical laboratory concepts, microbial diversity, and evidence-based scientific reasoning into one accessible digital learning experience."
+            </p>
+
+            <p class="creator-bio">
+              "In physical microbiology labs, students often struggle with the manual mechanics of progressive dilution streaking and jump prematurely to species claims based solely on how a colony looks. StreakIt! was built with a core philosophy: <em>observe first, record evidence, understand uncertainty, and then draw justifiable conclusions</em>."
+            </p>
+
+            <div class="creator-contact-bar" style="margin-top: 2rem;">
+              <a href="mailto:arshidhingra2006@gmail.com" class="contact-pill contact-email">
+                ✉️ Email Arshi (arshidhingra2006@gmail.com)
+              </a>
+              <a href="tel:9466454005" class="contact-pill contact-phone">
+                📞 Phone: 9466454005
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Architecture & Syllabus Alignment Overview -->
+      <div class="notebook-toolbar" style="margin-top: 2rem;">
+        <div>
+          <h3>About the StreakIt! Educational Architecture</h3>
+          <p class="text-slate" style="margin-top: 0.5rem; font-size: 0.92rem; line-height: 1.6;">
+            StreakIt! is designed without cumbersome external backend dependencies, running entirely natively in modern web browsers using standard HTML5 Canvas, Web Audio API synthesis, and local browser persistence. The simulation covers all six units of the standard undergraduate microbiology syllabus: History & Foundations, Growth & Culture Media, Metabolism & the Entner-Doudoroff Pathway, Horizontal Gene Transfer, Microbial Ecology, and Contamination Control/AMR.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="site-logo" style="margin-bottom: 0.5rem;">
+          <div class="logo-dish-icon">
+            <div class="logo-inner-streak"></div>
+          </div>
+          <span class="logo-brand">Streak<span class="logo-accent">It!</span></span>
+        </div>
+        <p>An interactive microbiology exploration and virtual laboratory learning game for undergraduate biotechnology and life sciences students.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#lab">Virtual Laboratory</a></li>
+          <li><a href="#missions">Missions Hub</a></li>
+          <li><a href="#notebook">Digital Lab Notebook</a></li>
+          <li><a href="#concepts">Concept Library</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Creator Contact</h4>
+        <ul>
+          <li><strong>Created by:</strong> Arshi</li>
+          <li><a href="mailto:arshidhingra2006@gmail.com">arshidhingra2006@gmail.com</a></li>
+          <li><a href="tel:9466454005">Phone: 9466454005</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 StreakIt! • Created by Arshi • Undergraduate Biotechnology Practicum</span>
+      <span>Simulated Educational Platform</span>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Application Module -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
